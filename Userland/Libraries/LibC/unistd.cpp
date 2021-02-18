@@ -790,4 +790,19 @@ int getpagesize()
 {
     return PAGE_SIZE;
 }
+
+void swab(const void* from, void* to, ssize_t n)
+{
+    if (n <= 0) return;
+    assert(from != NULL);
+    assert(to != NULL);
+    uint8_t* dest = (uint8_t*)to;
+    for (long ix = 0; ix < n - (n % 2); ix += 2) {
+        *dest = *((const uint8_t*)from + ix + 1);
+        dest++;
+        *dest = *((const uint8_t*)from + ix);
+        dest++;
+    }
+}
+
 }
