@@ -1,0 +1,10 @@
+--- libmad-0.15.1b/configure.orig	2021-02-18 23:40:06.877884051 +0000
++++ libmad-0.15.1b/configure	2021-02-18 23:40:12.525838979 +0000
+@@ -19100,7 +19100,6 @@
+     case "$optimize" in
+ 	-O|"-O "*)
+ 	    optimize="-O"
+-	    optimize="$optimize -fforce-mem"
+ 	    optimize="$optimize -fforce-addr"
+ 	    : #x optimize="$optimize -finline-functions"
+ 	    : #- optimize="$optimize -fstrength-reduce"
